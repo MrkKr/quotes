@@ -25,11 +25,12 @@ class QuotesController < ApplicationController
   # POST /quotes.json
   def create
     @quote = Quote.new(quote_params)
+    @quotes = Quote.all
 
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to @quote, notice: 'Quote was successfully created.' }
-        format.json { render :show, status: :created, location: @quote }
+        format.html { redirect_to action: 'index' }
+        format.json { render :show, status: :created, location: @quotes }
       else
         format.html { render :new }
         format.json { render json: @quote.errors, status: :unprocessable_entity }
