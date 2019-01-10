@@ -1,26 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="add-btn"><%= link_to 'New Quote', new_quote_path %></div>
 
-<h1>Quotes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Quote</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="quotes-grid">
     <% @quotes.each do |quote| %>
-      <tr>
-        <td><%= quote.quote %></td>
-        <td><%= quote.author %></td>
-      </tr>
+      <div class="quote">
+        <p class="quote-text">
+          <%= quote.quote %>
+        </p>
+        <span class="quote-author">
+          - <%= quote.author %>
+        </span>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Quote', new_quote_path %>
+  </div>
+</div>

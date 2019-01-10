@@ -1,3 +1,69 @@
 // Place all the styles related to the quotes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    h1 {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .add-btn {
+        display: inline-block;
+        border-radius: 0;
+        padding: 10px 15px;
+        margin: 20px 10px 15px 10px;
+        background-color: #fff;
+        border: 2px solid #333;
+        color: #333;
+        font-size: 20px;
+
+        a {
+            color: inherit;
+        }
+        
+        &:hover {
+            cursor: pointer;
+            background-color: #333;
+            border-color: #fff;
+            color: #fff;
+        }
+    }
+    .quotes-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .quote {
+            .quote-text {
+                font-family: 'Fjalla One', sans-serif;
+                font-size: 32px;
+            }
+            .quote-author {
+                font-family: 'Alegreya', serif;
+                font-size: 19px;
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) {
+    .quote {
+        flex: 0 1 100%;
+        padding: 10px;
+    }
+}
+@media (min-width: 768px) {
+    .quote {
+        flex: 0 1 30%;
+    }
+}
+@media (min-width: 991px) {
+    .quote {
+        flex: 0 1 25%;
+    }
+}
