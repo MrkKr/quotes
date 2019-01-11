@@ -8,8 +8,15 @@
     margin-left: auto;
     margin-right: auto;
 
+    .form-container {
+        padding: 10px;
+        margin-top: 20px;
+    }
+
     h1 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        margin: 20px 0 25px 0;
+        text-transform: uppercase;
     }
 
     .add-btn {
@@ -21,6 +28,7 @@
         border: 2px solid #333;
         color: #333;
         font-size: 20px;
+        text-transform: uppercase;
 
         a {
             color: inherit;
@@ -34,8 +42,13 @@
         }
     }
     .quotes-grid {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
 
         .quote {
@@ -49,21 +62,77 @@
             }
         }
     }
+    form {
+        max-width: 350px;
+        margin-bottom: 20px;
+
+        textarea,
+        input[type="text"] {
+            color: #333;
+            width: 100%;
+            border-radius: 0;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            -webkit-transition: all ease .4s;
+            -o-transition: all ease .4s;
+            transition: all ease .4s;
+
+            &:focus {
+                outline: none;
+                -webkit-appearance: none;
+                -webkit-box-shadow: rgba(0,0,0,0.1) 8px 8px 15px 0px;
+                box-shadow: rgba(0,0,0,0.1) 8px 8px 15px 0px;
+            }
+        }
+        textarea {
+            height: 100px;
+        }
+        .field {
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #fff;
+            border: 2px solid #333;
+            color: #333;
+            font-size: 16px;
+            text-transform: capitalize;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #333;
+                border-color: #fff;
+                color: #fff;
+            }
+        }
+    }
+    .btn-back {
+        a {
+            font-size: 15px;
+        }
+    }
 }
 
 @media (min-width: 0px) {
     .quote {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
         flex: 0 1 100%;
         padding: 10px;
     }
 }
 @media (min-width: 768px) {
     .quote {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 30%;
         flex: 0 1 30%;
     }
 }
 @media (min-width: 991px) {
     .quote {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 25%;
         flex: 0 1 25%;
     }
 }
